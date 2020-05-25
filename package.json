@@ -1,26 +1,35 @@
 {
-    "name": "pbl-app-project",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "jest",
-        "testcov": "jest --coverage",
-        "test1": "jest src/01-getting-started",
-        "test1cov": "jest src/01-getting-started --coverage",
-        "testfile": "jest src/01-getting-started/scripts/lfsplay.test.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "@babel/cli": "^7.8.4",
-        "@babel/preset-env": "^7.9.0",
-        "jest": "^24.9.0"
-    },
-    "dependencies": {
-        "bootstrap": "^4.5.0",
-        "node-fetch": "^2.6.0",
-        "whatwg-fetch": "^3.0.0"
-    }
+  "name": "pbl-app-project",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000P\u0000B\u0000L\u0000-\u0000A\u0000p\u0000p\u0000-\u0000P\u0000r\u0000o\u0000j\u0000e\u0000c\u0000t\u0000\r\u0000 \u0000\r\u0000 \u0000f\u0000i\u0000l\u0000e\u0000 \u0000u\u0000p\u0000d\u0000a\u0000t\u0000e\u0000d\u0000 \u0000t\u0000o\u0000 \u0000t\u0000e\u0000s\u0000t\u0000 \u0000g\u0000i\u0000t\u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "testcov": "jest --coverage",
+    "test1": "jest src/01-getting-started",
+    "test1cov": "jest src/01-getting-started --coverage",
+    "testfile": "jest src/01-getting-started/scripts/lfsplay.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^26.0.1",
+    "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "node-fetch": "^2.6.0",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SaharGresham/PBL-App-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SaharGresham/PBL-App-Project/issues"
+  },
+  "homepage": "https://github.com/SaharGresham/PBL-App-Project#readme"
 }
