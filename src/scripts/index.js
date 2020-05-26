@@ -26,6 +26,13 @@ document.body.addEventListener("click", e => {
     if (elAttribute==="radio"){
     console.log(el.getAttribute("name"));
 
+    const cardSection = document.getElementById("r-corner");
+
+    let divNewCard = document.createElement("div");
+    cardSection.appendChild(divNewCard);
+
+    stuff.buildNewCard(divNewCard);
+
 
 // event handlers for buttons on cards
 
