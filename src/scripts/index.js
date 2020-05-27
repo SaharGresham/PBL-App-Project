@@ -1,29 +1,51 @@
 import stuff from './dom-pblApp.js'
+import things from './pblApp.js'
+
+// things.loadJSON(function(json) {
+//     console.log(json); // this will log out the json object
+//   });
+
+const theResources = new things.ResourceHandlers();
+const theCriterias = new stuff.criterias();
+console.log(theCriterias);
+addEventListener("load", myloadScript(), stuff.functions.hide());
+async function myloadScript() {
+    await theResources.createAssetsfromJson();
+}
 
 document.body.addEventListener("click", e => {
-    
-    console.log(e);
-    
+
+
+
     const el = e.target;
-    console.log(e.target);
+
     const elID = el.id;
-    console.log(elID);
-    
-    
-    
-    if (elID === "select1") 
-    {
-        stuff.getArea("select1")
-        console.log(stuff.getArea("select1"));
-        
+
+    const elAttribute = el.getAttribute("type");
+
+
+
+    if (elID === "select1") {
+        theCriterias.getArea("select1")
+        console.log(theCriterias.getArea("select1"));
+
+        let subsetResources = theResources.filterbySector(theCriterias.ourfilters[0]);
+        // if (theResources.filterbySector(stuff.getArea("select1")).length>0)
+        console.log(subsetResources);
+        { stuff.functions.Show() };
+
     }
     
-    const elAttribute = el.getAttribute("type");
-    // console.log(elAttribute);
-   
-    if (elAttribute==="radio"){
-    console.log(el.getAttribute("name"));
-}
+    if (elAttribute === "radio") {
+
+        theCriterias.ourfilters[1] = String(elID);
+    }
+    console.log(theCriterias)
+    if (theCriterias.ourfilters.length >=2){
+     let finalSearch=  theResources.filterbyCriterias(theCriterias.ourfilters)
+        console.log(finalSearch)
+    }
+
 })
 
 

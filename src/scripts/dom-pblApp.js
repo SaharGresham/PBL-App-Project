@@ -1,17 +1,35 @@
-const functions = {
+
+class criterias{
+    constructor(){
+        this.ourfilters=[];
+    }
 
     getArea() {
         let select2 = document.getElementById('select1');
+        this.ourfilters[0]=String(select2.value);
 
-        // document.getElementById('name').value=select2.value;
-
-        return (select2.value);
+        return this;
+    }
+    getNeed (eL){
+        let ourNeed=eL.id;
+        console.log(ourNeed);
+        this.ourfilters[1]=String(ourNeed.id);
+        return this;
+    }
+}
+    const functions = {
+    hide(){
+        document.getElementById("cont1").style.visibility="hidden";    
     },
+
+    Show(){
+        document.getElementById("cont1").style.visibility="visible";     
+    }
 
 
 }
 
-export default functions;
+export default {criterias,functions};
 
 
 

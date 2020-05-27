@@ -1,5 +1,6 @@
 const fetchfunctions = {
 
+   url: '../data/resources.json',
     async postData (url = '', data = {}) {
         // Default options are marked with *
         const response = await fetch(url, {

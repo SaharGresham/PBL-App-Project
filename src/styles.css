@@ -289,4 +289,11 @@ button:hover {
         background-color: #73AD21;
         color: white;
     }
+    .personal-details {
+        text-align: center;
+        width: 10em;
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        }
 }
