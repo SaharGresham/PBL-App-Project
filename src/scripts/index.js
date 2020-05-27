@@ -9,6 +9,7 @@ const theResources = new things.ResourceHandlers();
 const theCriterias = new stuff.criterias();
 console.log(theCriterias);
 addEventListener("load", myloadScript(), stuff.functions.hide());
+
 async function myloadScript() {
     await theResources.createAssetsfromJson();
 }
@@ -34,54 +35,55 @@ document.body.addEventListener("click", e => {
         console.log(subsetResources);
         { stuff.functions.Show() };
 
-    console.log(elID);
-    
-    // event handler for area selctor
-    
-    if (elID === "select1") 
-    {
-        stuff.getArea("select1")
-        console.log(stuff.getArea("select1"));
-        
     }
 
-// event handler for service selector
-    
-<<<<<<< HEAD
-    if (elAttribute === "radio") {
-
-        theCriterias.ourfilters[1] = String(elID);
-    }
-    console.log(theCriterias)
-    if (theCriterias.ourfilters.length >=2){
-     let finalSearch=  theResources.filterbyCriterias(theCriterias.ourfilters)
-        console.log(finalSearch)
-    }
-
-=======
-    const elAttribute = el.getAttribute("type");
-    // console.log(elAttribute);
-   
-    if (elAttribute==="radio"){
-    console.log(el.getAttribute("name"));
-
-    const cardSection = document.getElementById("r-corner");
-
-    let divNewCard = document.createElement("div");
-    cardSection.appendChild(divNewCard);
-
-    stuff.buildNewCard(divNewCard);
+        // event handler for area selctor
 
 
-// event handlers for buttons on cards
+        // event handler for service selector
 
-//event handler for message area
+        // if (elAttribute === "radio") {
 
-//event handler for radio buttons y/n 
+        //     theCriterias.ourfilters[1] = String(elID);
+        // }
+        // console.log(theCriterias)
+        // if (theCriterias.ourfilters.length >= 2) {
+        //     let finalSearch = theResources.filterbyCriterias(theCriterias.ourfilters)
+        //     console.log(finalSearch)
+        // }
 
-}
->>>>>>> 1bcf10847ead94e3a1d5c6d73089fe00e4cf2600
-})
+
+
+
+        if (elAttribute === "radio") {
+            theCriterias.ourfilters[1] = String(elID);
+        }
+        console.log(theCriterias)
+
+        if (theCriterias.ourfilters.length >= 2) {
+            let finalSearch = theResources.filterbyCriterias(theCriterias.ourfilters)
+            console.log(finalSearch)
+
+            const cardSection = document.getElementById("r-corner");
+            console.log(cardSection);
+
+            // let divNewCard = document.createElement("div");
+            // cardSection.appendChild(divNewCard);
+
+            let newCard= stuff.functions.buildNewCard();
+            console.log(newCard);
+            cardSection.appendChild(newCard);
+
+
+            // event handlers for buttons on cards
+
+            //event handler for message area
+
+            //event handler for radio buttons y/n 
+
+        }
+
+    })
 
 
 

@@ -1,5 +1,6 @@
 
 import fetchfunctions from './fetch-pblApp.js';
+import stuff from './dom-pblApp.js'
 
 // import resources from '../data/resources.json';
 // function loadJSON(callback) {   
@@ -69,8 +70,8 @@ class ResourceHandlers {
 filterbyCriterias(terms){
     let finalAns = this.majorRS.filter(temp1 => ((temp1.Sector === terms[0])&&(temp1.Category ===terms[1])))
     if (finalAns.length == 0)
-    {finalAns= this.filterbySector(terms[0]); 
-    alert ("No available resources with these criterias.All resources in this area of Calgary are as belows")}
+    {finalAns= this.filterbySector(terms[0]); }
+    // alert ("No available resources with these criterias.All resources in this area of Calgary are as belows")}
     return finalAns;
 }
 
@@ -96,5 +97,9 @@ class Asset {
 
 
     }
+    // showAsset(){
+    //  this.stuff.
+
+    // }
 }
 export default {Asset,ResourceHandlers };
