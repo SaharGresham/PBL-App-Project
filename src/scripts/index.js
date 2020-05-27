@@ -34,8 +34,20 @@ document.body.addEventListener("click", e => {
         console.log(subsetResources);
         { stuff.functions.Show() };
 
-    }
+    console.log(elID);
     
+    // event handler for area selctor
+    
+    if (elID === "select1") 
+    {
+        stuff.getArea("select1")
+        console.log(stuff.getArea("select1"));
+        
+    }
+
+// event handler for service selector
+    
+<<<<<<< HEAD
     if (elAttribute === "radio") {
 
         theCriterias.ourfilters[1] = String(elID);
@@ -46,6 +58,29 @@ document.body.addEventListener("click", e => {
         console.log(finalSearch)
     }
 
+=======
+    const elAttribute = el.getAttribute("type");
+    // console.log(elAttribute);
+   
+    if (elAttribute==="radio"){
+    console.log(el.getAttribute("name"));
+
+    const cardSection = document.getElementById("r-corner");
+
+    let divNewCard = document.createElement("div");
+    cardSection.appendChild(divNewCard);
+
+    stuff.buildNewCard(divNewCard);
+
+
+// event handlers for buttons on cards
+
+//event handler for message area
+
+//event handler for radio buttons y/n 
+
+}
+>>>>>>> 1bcf10847ead94e3a1d5c6d73089fe00e4cf2600
 })
 
 

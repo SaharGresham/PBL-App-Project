@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 
 class criterias{
     constructor(){
         this.ourfilters=[];
     }
+=======
+// What do we need? 
+// Card title, subtitle (2) - service type/sector, text describing services
+
+const functions = {
+>>>>>>> 1bcf10847ead94e3a1d5c6d73089fe00e4cf2600
 
     getArea() {
         let select2 = document.getElementById('select1');
@@ -22,37 +29,123 @@ class criterias{
         document.getElementById("cont1").style.visibility="hidden";    
     },
 
+<<<<<<< HEAD
     Show(){
         document.getElementById("cont1").style.visibility="visible";     
     }
 
+=======
+    buildNewCard: () => {
+>>>>>>> 1bcf10847ead94e3a1d5c6d73089fe00e4cf2600
 
-}
+      console.log("Does the card work?");
+      
 
+<<<<<<< HEAD
 export default {criterias,functions};
+=======
+      //  create div
+  
+      const divNewCard = document.createElement("div");
+>>>>>>> 1bcf10847ead94e3a1d5c6d73089fe00e4cf2600
 
-
-
-
-
-
-
-// const domFunction = 
+      // create card title
     
-//     function getOption() { 
+      const txtNode = document.createElement("strong");
+      //   const msg = ... need from resources.JSON/sheet1.Organization
+      txtNode.textContent = "cardTitle";
+      txtNode.classList.add("text-center");
+      divNewCard.appendChild(txtNode);
 
-//     let selectElement =  document.getElementById('select1');  
-              
-//     let output = selectElement.value; 
-    
-//     console.log(output);
-    
-//     return output;
+      const breakLine1 = document.createElement("br");
+      divNewCard.appendChild(breakLine1);
 
-    
+      // txtNode.setAttribute('id', `cardTitle ${text.name}`);
 
-//     // document.querySelector('.output').textContent = output; 
-            
-// } 
+      // create subtitles
 
-// export default domFunction;
+
+      const subtitle1 = document.createElement("h3");
+      //    const msg1 = ... need from resources.JSON/sheet1.Sector
+      subtitle1.textContent = "subtitle1";
+      // subtitle1.classList.add("text-center");
+      divNewCard.appendChild(subtitle1);
+
+      const breakLine2 = document.createElement("br");
+      divNewCard.appendChild(breakLine2);  
+      
+      const subtitle2 = document.createTextNode("h3");
+      //    const msg2 = ... need from resources.JSON/sheet1.Category
+      subtitle2.textContent = "subtitle2";
+      // subtitle2.classList.add("text-center");
+      divNewCard.appendChild(subtitle2);
+
+      const breakLine3 = document.createElement("br");
+      divNewCard.appendChild(breakLine3); 
+
+      // create service description ... placeholder
+
+      const placeHolder = document.createTextNode("p");
+      //    const msg2 = ... need from resources.JSON/sheet1.Description
+      placeHolder.textContent = "description";
+      // placeHolder.classList.add("text-center");
+      divNewCard.appendChild(placeHolder);
+
+      // create buttons
+
+      const addLinkBtn = document.createElement("button");
+      addLinkBtn.appendChild(document.createTextNode("Link"));
+      addLinkBtn.setAttribute("todo", "addLink");
+      divNewCard.appendChild(addLinkBtn);
+
+      const addEmailBtn = document.createElement("button");
+      addEmailBtn.appendChild(document.createTextNode("Email"));
+      addEmailBtn.setAttribute("todo", "addEmail");
+      divNewCard.appendChild(addEmailBtn);
+
+      const addPhoneBtn = document.createElement("button");
+      addPhoneBtn.appendChild(document.createTextNode("Phone"));
+      addPhoneBtn.setAttribute("todo", "addPhone");
+      divNewCard.appendChild(addPhoneBtn);
+
+      const addMapBtn = document.createElement("button");
+      addMapBtn.appendChild(document.createTextNode("Map"));
+      addMapBtn.setAttribute("todo", "addPhone");
+      divNewCard.appendChild(addMapBtn);
+
+      // divNewCard.classList.add("card-body");
+
+      console.log("Still working?");
+      
+
+
+    return divNewCard;
+  },
+
+  //Card Logic - Connects card to event listener
+
+  // addCardBefore: (el) => {
+  //   const card = el.parentElement;
+  //   const group = card.parentElement;
+  //   const div = functions.buildNewCard();
+  //   group.insertBefore(div, card);
+  // },
+
+  // addCardAfter: (el) => {
+  //   const card = el.parentElement;
+  //   const group = card.parentElement;
+  //   const div = functions.buildNewCard();
+  //   group.insertBefore(div, card.nextSibling);
+
+  // },
+
+  // deleteCard: (el) => {
+  //   const card = el.parentElement;
+  //   const group = card.parentElement;
+  //   group.removeChild (card); 
+
+  // },
+};
+
+
+export default functions;
