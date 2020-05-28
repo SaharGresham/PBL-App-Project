@@ -2,31 +2,7 @@
 import fetchfunctions from './fetch-pblApp.js';
 import stuff from './dom-pblApp.js'
 
-// import resources from '../data/resources.json';
-// function loadJSON(callback) {   
-//     var xobj = new XMLHttpRequest();
-//     xobj.overrideMimeType("application/json");
-//     xobj.open('GET', '../data/resources.json', true);
-//     xobj.onreadystatechange = function () {
-//       if (xobj.readyState == 4 && xobj.status == "200") {
-//         callback(JSON.parse(xobj.responseText));
-//       }
-//     };
-//     xobj.send(null);  
-//   }
-//    loadJSON(function(json) {
-//     console.log(json); // this will log out the json object
-//     const loadData= json;
 
-//     console.log(loadData);
-//     return loadData;
-//   });
-//  console.log(loadData);
-// const apblFunction={
-//     play(){
-//         console.log(" WE ARE A GREAT TEAM");
-//     },
-// }
 class ResourceHandlers {
     constructor() {
         this.majorRS = [];
@@ -98,8 +74,17 @@ class Asset {
 
     }
     // showAsset(){
-    //  this.stuff.
+    //  stuff.functions.buildNewCard(
+    //     this.Organization,
+    //     this.Category,
+    //     this.Hours_of_operation,
+    //     this.Website,
+    //     this.Email,
+    //     this.Phone_office_hours    
+    //  )
+         
+    //  }
 
-    // }
+    
 }
 export default {Asset,ResourceHandlers };

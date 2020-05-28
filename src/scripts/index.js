@@ -37,53 +37,66 @@ document.body.addEventListener("click", e => {
 
     }
 
-        // event handler for area selctor
+    // event handler for area selctor
 
 
-        // event handler for service selector
+    // event handler for service selector
 
-        // if (elAttribute === "radio") {
+    // if (elAttribute === "radio") {
 
-        //     theCriterias.ourfilters[1] = String(elID);
-        // }
-        // console.log(theCriterias)
-        // if (theCriterias.ourfilters.length >= 2) {
-        //     let finalSearch = theResources.filterbyCriterias(theCriterias.ourfilters)
-        //     console.log(finalSearch)
-        // }
-
-
+    //     theCriterias.ourfilters[1] = String(elID);
+    // }
+    // console.log(theCriterias)
+    // if (theCriterias.ourfilters.length >= 2) {
+    //     let finalSearch = theResources.filterbyCriterias(theCriterias.ourfilters)
+    //     console.log(finalSearch)
+    // }
 
 
-        if (elAttribute === "radio") {
-            theCriterias.ourfilters[1] = String(elID);
-        }
-        console.log(theCriterias)
-
-        if (theCriterias.ourfilters.length >= 2) {
-            let finalSearch = theResources.filterbyCriterias(theCriterias.ourfilters)
-            console.log(finalSearch)
-
-            const cardSection = document.getElementById("r-corner");
-            console.log(cardSection);
-
-            // let divNewCard = document.createElement("div");
-            // cardSection.appendChild(divNewCard);
-
-            let newCard= stuff.functions.buildNewCard();
-            console.log(newCard);
-            cardSection.appendChild(newCard);
 
 
-            // event handlers for buttons on cards
+    if (elAttribute === "radio") {
+        theCriterias.ourfilters[1] = String(elID);
+    }
+    console.log(theCriterias)
 
-            //event handler for message area
+    if (theCriterias.ourfilters.length >= 2) {
+        let finalSearch = theResources.filterbyCriterias(theCriterias.ourfilters)
+        console.log(finalSearch)
 
-            //event handler for radio buttons y/n 
+        const cardSection = document.getElementById("r-corner");
+        console.log(cardSection);
 
-        }
+        // let cards = finalSearch.map(tempasset => tempasset.showAsset());
+        let cards = finalSearch.map(tempasset => stuff.functions.buildNewCard(tempasset.Organization,
+            tempasset.Category,
+            tempasset.Hours_of_operation,
+            tempasset.Website,
+            tempasset.Email,
+            tempasset.Phone_office_hours ));
+        console.log(cards);
 
-    })
+        cards.forEach(thecard => {
+            cardSection.appendChild(thecard);
+        });
+
+        // let divNewCard = document.createElement("div");
+        // cardSection.appendChild(divNewCard);
+
+        // let newCard= stuff.functions.buildNewCard();
+        // console.log(newCard);
+        // cardSection.appendChild(newCard);
+
+
+        // event handlers for buttons on cards
+
+        //event handler for message area
+
+        //event handler for radio buttons y/n 
+
+    }
+
+})
 
 
 
