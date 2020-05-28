@@ -39,12 +39,15 @@ const functions = {
 
         const divNewCard = document.createElement("div");
         divNewCard.setAttribute("class", "card-body");
-        divNewCard.setAttribute("id", "samplecrd");
+        divNewCard.setAttribute("id", "r-corner");
+        const breakLine7 = document.createElement("br");
+        divNewCard.appendChild(breakLine7);
+
         // create card title
 
         const txtNode = document.createElement("strong");
         //   const msg = ... need from resources.JSON/sheet1.Organization
-        txtNode.textContent = String(organization)+" :";
+        txtNode.textContent = String(organization);
         txtNode.classList.add("text-center");
         divNewCard.appendChild(txtNode);
 
@@ -56,31 +59,42 @@ const functions = {
         // create subtitles
 
 
-        const subtitle1 = document.createElement("h3");
+        const subtitle1 = document.createElement("h5");
         //    const msg1 = ... need from resources.JSON/sheet1.Sector
-        subtitle1.textContent = "This Center provides"+String(category);
+        subtitle1.textContent = "This Center provides: "+String(category);
         // subtitle1.classList.add("text-center");
         divNewCard.appendChild(subtitle1);
 
-        const breakLine2 = document.createElement("br");
-        divNewCard.appendChild(breakLine2);
+        // const breakLine2 = document.createElement("br");
+        // divNewCard.appendChild(breakLine2);
 
-        const subtitle2 = document.createTextNode("h3");
+        const subtitle2 = document.createTextNode("h5");
         //    const msg2 = ... need from resources.JSON/sheet1.Category
-        subtitle2.textContent = "Hours of Operation: "+String(hours_of_operation);
-        // subtitle2.classList.add("text-center");
+        subtitle2.textContent = "Hours of Operation: "
         divNewCard.appendChild(subtitle2);
+        
+        // subtitle2.classList.add("text-center");
+        const breakLine6 = document.createElement("br");
+        divNewCard.appendChild(breakLine6);
+
+        const subTitle_2 = document.createTextNode("h3");
+        subTitle_2.textContent = String(hours_of_operation);
+        divNewCard.appendChild(subTitle_2);
 
         const breakLine3 = document.createElement("br");
         divNewCard.appendChild(breakLine3);
 
+        const breakLine2 = document.createElement("br");
+        divNewCard.appendChild(breakLine2);
+
+
         // create service description ... placeholder
 
-        const placeHolder = document.createTextNode("p");
-        //    const msg2 = ... need from resources.JSON/sheet1.Description
-        placeHolder.textContent = "description: ";
-        // placeHolder.classList.add("text-center");
-        divNewCard.appendChild(placeHolder);
+        // const placeHolder = document.createTextNode("p");
+        // //    const msg2 = ... need from resources.JSON/sheet1.Description
+        // placeHolder.textContent = "description: ";
+        // // placeHolder.classList.add("text-center");
+        // divNewCard.appendChild(placeHolder);
 
         // create buttons
 
@@ -116,6 +130,12 @@ const functions = {
 
         console.log("Still working?");
         console.log(divNewCard)
+
+        const breakLine4 = document.createElement("br");
+        divNewCard.appendChild(breakLine4);
+
+        const breakLine5 = document.createElement("br");
+        divNewCard.appendChild(breakLine5);
 
 
         return divNewCard;
