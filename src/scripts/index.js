@@ -53,9 +53,9 @@ document.body.addEventListener("click", e => {
         let cards = finalSearch.map(tempasset => stuff.functions.buildNewCard(tempasset.Organization,
             tempasset.Category,
             tempasset.Hours_of_operation,
-            tempasset.Website,
+            tempasset.Phone_office_hours,
             tempasset.Email,
-            tempasset.Phone_office_hours));
+            tempasset.Website));
         console.log(cards);
 
         cards.forEach(thecard => {

@@ -47,7 +47,7 @@ const functions = {
         document.getElementById("select1").disabled=false;
       },
 
-    buildNewCard(organization,category,hours_of_operation,link,email,phone) {
+    buildNewCard(organization,category,hours_of_operation,phone,link,email) {
 
         console.log("Does the card work?");
 
@@ -104,6 +104,16 @@ const functions = {
         const breakLine2 = document.createElement("br");
         divNewCard.appendChild(breakLine2);
 
+        const subtitle3 = document.createTextNode("h5");
+        //    const msg2 = ... need from resources.JSON/sheet1.Category
+        subtitle3.textContent = "Phone: "+String(phone);
+        divNewCard.appendChild(subtitle3);
+        
+        const breakLine8 = document.createElement("br");
+        divNewCard.appendChild(breakLine8);
+
+        const breakLine9 = document.createElement("br");
+        divNewCard.appendChild(breakLine9);
 
         // create service description ... placeholder
 
@@ -121,26 +131,28 @@ const functions = {
         addLinkBtn.appendChild(document.createTextNode("Link"));
         addLinkBtn.setAttribute("todo", "addLink");
         divNewCard.appendChild(addLinkBtn);
-
+      
         // const addEmailBtn = document.createElement("button");
+        if (!(String(email==="tbd")))
+        {
         const addEmailBtn = document.createElement("a");
         addEmailBtn.setAttribute("href","mailto:"+String(email));
         addEmailBtn.appendChild(document.createTextNode("Email"));
         addEmailBtn.setAttribute("todo", "addEmail");
-        divNewCard.appendChild(addEmailBtn);
+        divNewCard.appendChild(addEmailBtn);}
 
         // const addPhoneBtn = document.createElement("button");
-        const addPhoneBtn = document.createElement("a");
-        addPhoneBtn.setAttribute("href",String(phone));
-        addPhoneBtn.appendChild(document.createTextNode("Phone"));
-        addPhoneBtn.setAttribute("todo", "addPhone");
-        divNewCard.appendChild(addPhoneBtn);
+        // const addPhoneBtn = document.createElement("a");
+        // addPhoneBtn.setAttribute("href",String(phone));
+        // addPhoneBtn.appendChild(document.createTextNode("Phone"));
+        // addPhoneBtn.setAttribute("todo", "addPhone");
+        // divNewCard.appendChild(addPhoneBtn);
 
         // const addMapBtn = document.createElement("button");
         const addMapBtn = document.createElement("a");
         addMapBtn.setAttribute("href", "https://www.google.ca/maps/place/Calgary,+AB/@51.0272883,-114.3680132,10z/data=!3m1!4b1!4m5!3m4!1s0x537170039f843fd5:0x266d3bb1b652b63a!8m2!3d51.0447331!4d-114.0718831")
         addMapBtn.appendChild(document.createTextNode("Google Map"));
-        addMapBtn.setAttribute("todo", "addPhone");
+        addMapBtn.setAttribute("todo", "addMap");
         divNewCard.appendChild(addMapBtn);
 
         // divNewCard.classList.add("card-body");
