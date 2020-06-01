@@ -128,7 +128,7 @@ const functions = {
         // const addLinkBtn = document.createElement("button");
         const addLinkBtn = document.createElement("a");
         addLinkBtn.setAttribute("href",String(link));
-        addLinkBtn.appendChild(document.createTextNode("Link"));
+        addLinkBtn.appendChild(document.createTextNode("Website"));
         addLinkBtn.setAttribute("todo", "addLink");
         divNewCard.appendChild(addLinkBtn);
       
