@@ -30,6 +30,23 @@ const functions = {
         document.getElementById("cont1").style.visibility = "visible";
     },
 
+    noResourceshide(){
+        document.getElementById("no-resources1").style.visibility= "hidden";
+        // document.getElementById("no-resources2").style.visibility= "hidden";
+
+    },
+    noResourcesShow(){
+        document.getElementById("no-resources1").style.visibility= "visible";
+        // document.getElementById("no-resources2").style.visibility= "visible";
+
+    },
+     disable() {
+        document.getElementById("select1").disabled=true;
+      },
+    enable() {
+        document.getElementById("select1").disabled=false;
+      },
+
     buildNewCard(organization,category,hours_of_operation,link,email,phone) {
 
         console.log("Does the card work?");
@@ -59,7 +76,7 @@ const functions = {
         // create subtitles
 
 
-        const subtitle1 = document.createElement("h5");
+        const subtitle1 = document.createElement("h4");
         //    const msg1 = ... need from resources.JSON/sheet1.Sector
         subtitle1.textContent = "This Center provides: "+String(category);
         // subtitle1.classList.add("text-center");
@@ -140,6 +157,15 @@ const functions = {
 
         return divNewCard;
     },
+    //  deleteCard(cardHolder)
+    //  {
+       
+
+    //     thisCard.parentNode.removeChild(thisCard);
+    //     // await fetchCities.postData(fetchCities.url + 'delete', {"key":deletedCity.key});
+
+    //     // this.cities.splice(deletedIndex, 1);
+    // }
 }
 
   //Card Logic - Connects card to event listener

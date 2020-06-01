@@ -21,11 +21,14 @@
             <p style="text-align:center">The Calgary Helps is seeking to serve our community. Please, fill in the
                 information below to see the resources available in Calgary.</p>
             <br />
-
+            <div class="btn-block">
+                <input type="button" id="women" todo="women-only" value="Women Resources Only"></button><br><br>
+            </div>
             <div class="item">
-                <p>Calgary Areas</p>
+                <p>Calgary Areas</p><br>
                 <select id="select1" name="dropdown1">
                     <option selected value="" disabled selected></option>
+                    <!-- <option value="Y">Women Only</option> -->
                     <option value="NW">North West</option>
                     <option value="NE">North East</option>
                     <option value="Downtown">Downtown</option>
@@ -38,7 +41,8 @@
 
 
             <div class="question" id="cont1">
-                <label>I am looking for :</label>
+                <label>I am looking for :</label><br><br>
+
                 <div class="question-answer">
                     <div>
                         <input type="radio" value="none" id="Shelter" name="Activity" />
@@ -60,6 +64,10 @@
                         <input type="radio" value="none" id="Counselling" name="Activity" />
                         <label for="Counselling" class="radio"><span>Counselling</span></label>
                     </div>
+                    <!-- <div>
+                        <input type="radio" value="none" id="Women" name="Activity" />
+                        <label for="Women" class="radio"><span>Women Only</span></label>
+                    </div> -->
                 </div>
             </div>
     </div>
@@ -75,7 +83,16 @@
     <!-- <div class="card w-75"> -->
 
     <div id="r-corner" class="w-75 p-3" style="background-color: #eee;text-align:center">
-<!-- 
+        <p style="text-align:center">The Calgary Resources are showing up here:</p>
+        <div class="btn-block">
+            <input type="reset" id="reset" todo="delete-cards" value="Reset Search"></button><br><br>
+        </div>
+        <!-- <button id="reset"> Reset Search</input> -->
+        <p id="no-resources1" style="text-align:center">No RESOURCES available based on your criteria. Change the area,
+            and you might find what you are looking for in other areas of Calgary</p><br />
+        <!-- <p id="no-resources2"style="text-align:center">Here are all other resource available in this area you chose:</p> -->
+        <!-- <br /> -->
+        <!-- 
         <div class="card-body" id="samplecrd">
             <h2 class="card-title">Card title</h2>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
@@ -107,9 +124,9 @@
             </div>
         </div>
     </div>
-    <div class="btn-block">
-        <button type="submit" href="/">Submit</button>
-    </div>
+    <!-- <div class="btn-block">
+        <button type="submit" href="/">Submit</button> -->
+    <!-- </div> -->
     </form>
     </div>
 </body>

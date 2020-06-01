@@ -1,30 +1,29 @@
 import stuff from './dom-pblApp.js'
 import things from './pblApp.js'
 
-// things.loadJSON(function(json) {
-//     console.log(json); // this will log out the json object
-//   });
 
 const theResources = new things.ResourceHandlers();
 const theCriterias = new stuff.criterias();
+const cardSection = document.getElementById("r-corner");
 console.log(theCriterias);
-addEventListener("load", myloadScript(), stuff.functions.hide());
+addEventListener("load", myloadScript(), stuff.functions.hide(), stuff.functions.noResourceshide());
 
 async function myloadScript() {
     await theResources.createAssetsfromJson();
 }
 
 document.body.addEventListener("click", e => {
-
-
-
     const el = e.target;
-
     const elID = el.id;
-
+    const todo = el.getAttribute("todo");
     const elAttribute = el.getAttribute("type");
 
+    if (todo === "women-only"){
+        stuff.functions.disable();
+       stuff.functions.Show();
+       theCriterias.ourfilters[0] = String("Y");
 
+    }
 
     if (elID === "select1") {
         theCriterias.getArea("select1")
@@ -37,22 +36,6 @@ document.body.addEventListener("click", e => {
 
     }
 
-    // event handler for area selctor
-
-
-    // event handler for service selector
-
-    // if (elAttribute === "radio") {
-
-    //     theCriterias.ourfilters[1] = String(elID);
-    // }
-    // console.log(theCriterias)
-    // if (theCriterias.ourfilters.length >= 2) {
-    //     let finalSearch = theResources.filterbyCriterias(theCriterias.ourfilters)
-    //     console.log(finalSearch)
-    // }
-
-
 
 
     if (elAttribute === "radio") {
@@ -64,7 +47,6 @@ document.body.addEventListener("click", e => {
         let finalSearch = theResources.filterbyCriterias(theCriterias.ourfilters)
         console.log(finalSearch)
 
-        const cardSection = document.getElementById("r-corner");
         console.log(cardSection);
 
         // let cards = finalSearch.map(tempasset => tempasset.showAsset());
@@ -73,28 +55,38 @@ document.body.addEventListener("click", e => {
             tempasset.Hours_of_operation,
             tempasset.Website,
             tempasset.Email,
-            tempasset.Phone_office_hours ));
+            tempasset.Phone_office_hours));
         console.log(cards);
 
         cards.forEach(thecard => {
             cardSection.appendChild(thecard);
         });
+    }
 
-        // let divNewCard = document.createElement("div");
-        // cardSection.appendChild(divNewCard);
-
-        // let newCard= stuff.functions.buildNewCard();
-        // console.log(newCard);
-        // cardSection.appendChild(newCard);
+    if (elAttribute === "reset") {
+        theCriterias.ourfilters = [];
+        console.log(theCriterias.ourfilters);
+        stuff.functions.enable();
 
 
-        // event handlers for buttons on cards
 
-        //event handler for message area
+        console.log(cardSection.childNodes);
 
-        //event handler for radio buttons y/n 
+        let ourCrads = cardSection.childNodes;
+        console.log(ourCrads);
+        for (let i = 0; i < cardSection.childNodes.length; i++)
+
+            {if ((cardSection.lastChild.nodeName === "DIV") && (cardSection.lastChild.getAttribute("class") === "card-body")) {
+                let theChild = cardSection.lastChild;
+                cardSection.removeChild(theChild);
+               
+            }
 
     }
+}
+    
+    
+        
 
 })
 

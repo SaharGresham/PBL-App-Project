@@ -53,8 +53,10 @@ form {
 .banner {
     position: relative;
     height: 300px;
-    background-image: url("/uploads/media/default/0001/02/8070c999efd1a155ad843379a5508d16f544aeaf.jpeg");
+    /* background-image: url("/uploads/media/default/0001/02/8070c999efd1a155ad843379a5508d16f544aeaf.jpeg"); */
+    background-image: url("https://images.unsplash.com/photo-1579208575657-c595a05383b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
     background-size: cover;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -171,12 +173,13 @@ label.radio {
 }
 
 .question {
+    margin-left: 43%;
     text-align: center"
 
 }
 
 .question-answer label {
-    margin-left: 47%;
+    /* margin-left: 47%; */
     display: flex;
     text-align: center;
 
@@ -220,24 +223,36 @@ input[type=radio]:checked+label:after {
     justify-content: space-around;
 }
 
-.btn-block {
+.btn-block, #reset,#women  {
     margin-top: 10px;
     text-align: center;
 }
-
-button {
+button, #reset {
     width: 150px;
     padding: 10px;
-    border: none;
+    border:2px solid #73AD21; 
     border-radius: 5px;
-    background: #669999;
+    background:#73AD21;
     font-size: 16px;
-    color: #fff;
+    background-color: white;
+    color: black;
     cursor: pointer;
 }
-
-button:hover {
-    background: #a3c2c2;
+button, #women {
+    width: 250px;
+    padding: 10px;
+    border:2px solid #73AD21; 
+    border-radius: 5px;
+    background:#73AD21;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+button:hover, #reset, #women {
+    background:#73AD21;
+    color: white;
+    
 }
 
 @media (min-width: 568px) {
@@ -264,7 +279,7 @@ button:hover {
     }
 
     #r-corner {
-
+        
         border-radius: 15px;
         border: 2px solid #73AD21;
         padding: 10px;
