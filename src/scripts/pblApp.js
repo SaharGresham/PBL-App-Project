@@ -17,11 +17,11 @@ class ResourceHandlers {
 
     async createAssetsfromJson() {
         //        await let loadData=loadJSON(function(json)
-        fetch('../data/resources.json').then(response => {
+        fetch('../data/resources4.json').then(response => {
             return response.json();
         }).then(data => {
             let newData = Object.entries(data)[0][1];
-            this.majorRS = newData.map(asset => new Asset(asset.ID, asset.Organization, asset.Sector, asset.Category, asset.Website, asset.Address, asset.Phone_office_hours, asset.Phone_after_hours, asset.Hours_of_operation, asset.Email, asset.Women_only, asset.Pet_friendly, asset.Notes))
+            this.majorRS = newData.map(asset => new Asset(asset.ID, asset.Organization, asset.Sector, asset.Category, asset.Website, asset.Address, asset.Phone_office_hours, asset.Phone_after_hours, asset.Hours_of_operation, asset.Email, asset.Women_only, asset.Pet_friendly, asset.Notes,asset.Google_Maps_link))
             this.counter = (this.majorRS.length) + 1;
             console.log(newData);
             console.log(this.majorRS);
@@ -76,7 +76,7 @@ class ResourceHandlers {
 
 
 class Asset {
-    constructor(ID, Organization, Sector, Category, Website, Address, Phone_office_hours, Phone_after_hours, Hours_of_operation, Email, Women_only, Pet_friendly, Notes) {
+    constructor(ID, Organization, Sector, Category, Website, Address, Phone_office_hours, Phone_after_hours, Hours_of_operation, Email, Women_only, Pet_friendly, Notes,Google_Maps_link) {
         this.ID = String(ID);
         this.Organization = String(Organization);
         this.Sector = String(Sector);
@@ -90,7 +90,7 @@ class Asset {
         this.Women_only = String(Women_only);
         this.Pet_friendly = String(Pet_friendly);
         this.Notes = String(Notes);
-
+        this.Google_Maps_link = String(Google_Maps_link);
 
     }
     // showAsset(){

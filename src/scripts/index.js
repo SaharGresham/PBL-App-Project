@@ -54,8 +54,8 @@ document.body.addEventListener("click", e => {
             tempasset.Category,
             tempasset.Hours_of_operation,
             tempasset.Phone_office_hours,
-            tempasset.Email,
-            tempasset.Website));
+            tempasset.Website,
+            tempasset.Google_Maps_link,));
         console.log(cards);
 
         cards.forEach(thecard => {
