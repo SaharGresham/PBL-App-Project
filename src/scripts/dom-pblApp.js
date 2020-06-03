@@ -47,7 +47,7 @@ const functions = {
         document.getElementById("select1").disabled=false;
       },
 
-    buildNewCard(organization,category,hours_of_operation,phone,link,Google_Maps_link) {
+    buildNewCard(organization,category,hours_of_operation,phone,website,Google_Maps_link) {
 
         console.log("Does the card work?");
 
@@ -127,7 +127,7 @@ const functions = {
 
         // const addLinkBtn = document.createElement("button");
         const addLinkBtn = document.createElement("a");
-        addLinkBtn.setAttribute("href",String(link));
+        addLinkBtn.setAttribute("href",String(website));
         addLinkBtn.setAttribute("target","_blank");
         addLinkBtn.appendChild(document.createTextNode("Website"));
         addLinkBtn.setAttribute("todo", "addLink");

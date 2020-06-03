@@ -67,6 +67,7 @@ document.body.addEventListener("click", e => {
         theCriterias.ourfilters = [];
         console.log(theCriterias.ourfilters);
         stuff.functions.enable();
+        stuff.functions.noResourceshide();
 
 
 
