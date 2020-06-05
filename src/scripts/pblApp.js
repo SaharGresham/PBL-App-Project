@@ -33,11 +33,8 @@ class ResourceHandlers {
             });
 
     }
-    // findAssets(sector){
-    //     let sectorAssets= this.majorRS.find(city => city.Sector === Sector);
-    //     console.log(sectorAssets);
-    //  return sectorAssets;
-    // }
+    
+
     filterbySector(term) {
         let ans;
         if (term === "Y") {
@@ -60,8 +57,10 @@ class ResourceHandlers {
         {
             finalAns=this.majorRS.filter(temp1 => ((temp1.Women_only === terms[0]) && (temp1.Category.includes(String(terms[1])))))
 
-        }
-        else
+        }else if (terms[0]==="AA")
+        {
+            finalAns=this.majorRS.filter(temp1 => (temp1.Category.includes(String(terms[1]))))
+        }else
         { finalAns = this.majorRS.filter(temp1 => ((temp1.Sector === terms[0]) && (temp1.Category.includes(String(terms[1])))))}
         if (finalAns.length === 0) {
         //     finalAns = this.filterbySector(terms[0]);
@@ -93,17 +92,7 @@ class Asset {
         this.Google_Maps_link = String(Google_Maps_link);
 
     }
-    // showAsset(){
-    //  stuff.functions.buildNewCard(
-    //     this.Organization,
-    //     this.Category,
-    //     this.Hours_of_operation,
-    //     this.Website,
-    //     this.Email,
-    //     this.Phone_office_hours    
-    //  )
-
-    //  }
+   
 
 
 }

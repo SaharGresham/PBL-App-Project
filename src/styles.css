@@ -19,6 +19,25 @@ p {
     color: #666;
     line-height: 22px;
 }
+#p1{
+    text-align: center;
+    width: 150px;
+    padding: 10px;
+    border:2px solid #73AD21; 
+    border-radius: 5px;
+    background:#73AD21;
+    font-size: 16px;
+    
+    color:white;
+    cursor: pointer;
+    margin-left: 45%;
+}
+
+footer {
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
 
 h1 {
     position: absolute;
@@ -34,7 +53,8 @@ textarea {
     padding: 5px;
 }
 
-.testbox {
+.testbox  {
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -91,6 +111,13 @@ input {
 
 input[type="date"] {
     padding: 4px 5px;
+}
+
+#stick
+ {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0; 
 }
 
 textarea {

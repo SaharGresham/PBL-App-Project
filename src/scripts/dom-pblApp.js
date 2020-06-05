@@ -47,7 +47,7 @@ const functions = {
         document.getElementById("select1").disabled=false;
       },
 
-    buildNewCard(organization,category,hours_of_operation,phone,website,Google_Maps_link) {
+    buildNewCard(organization,category,hours_of_operation,phone,email,pet_friendly,website,Google_Maps_link) {
 
         console.log("Does the card work?");
 
@@ -96,7 +96,11 @@ const functions = {
 
         const subTitle_2 = document.createTextNode("h3");
         subTitle_2.textContent = String(hours_of_operation);
+        // subTitle_2.id="subtitle_2"
+        // document.getElementById("subtitle_2").style.color="blue"
+
         divNewCard.appendChild(subTitle_2);
+        
 
         const breakLine3 = document.createElement("br");
         divNewCard.appendChild(breakLine3);
@@ -105,23 +109,35 @@ const functions = {
         divNewCard.appendChild(breakLine2);
 
         const subtitle3 = document.createTextNode("h5");
-        //    const msg2 = ... need from resources4.JSON/sheet1.Category
-        subtitle3.textContent = "Phone: "+String(phone);
+        subtitle3.textContent = "Phone: "+String(phone)+" & ";
         divNewCard.appendChild(subtitle3);
-        
+
+
+
+        //Email Section
+        const subtitle4 = document.createTextNode("h5");
+        subtitle4.textContent = "Email: " + String(email);
+        divNewCard.appendChild(subtitle4);
+
         const breakLine8 = document.createElement("br");
         divNewCard.appendChild(breakLine8);
 
         const breakLine9 = document.createElement("br");
         divNewCard.appendChild(breakLine9);
 
-        // create service description ... placeholder
+       
 
-        // const placeHolder = document.createTextNode("p");
-        // //    const msg2 = ... need from resources4.JSON/sheet1.Description
-        // placeHolder.textContent = "description: ";
-        // // placeHolder.classList.add("text-center");
-        // divNewCard.appendChild(placeHolder);
+        //Pet Friendly Sectionil
+        const subtitle5 = document.createTextNode("h5");
+        subtitle5.textContent = "Pet Friendly: " + String(pet_friendly);
+        divNewCard.appendChild(subtitle5);
+
+        const breakLine10 = document.createElement("br");
+        divNewCard.appendChild(breakLine10);
+
+        const breakLine11 = document.createElement("br");
+        divNewCard.appendChild(breakLine11);
+
 
         // create buttons
 
@@ -133,23 +149,16 @@ const functions = {
         addLinkBtn.setAttribute("todo", "addLink");
         divNewCard.appendChild(addLinkBtn);
       
-        // const addEmailBtn = document.createElement("button");
-        // if (!(String(email==="tbd")))
-        // {
-        // const addEmailBtn = document.createElement("a");
-        // addEmailBtn.setAttribute("href","mailto:"+String(email));
-        // addEmailBtn.appendChild(document.createTextNode("Email"));
-        // addEmailBtn.setAttribute("todo", "addEmail");
-        // divNewCard.appendChild(addEmailBtn);}
+       
+        const breakLine12 = document.createElement("br");
+        divNewCard.appendChild(breakLine12);
 
-        // const addPhoneBtn = document.createElement("button");
-        // const addPhoneBtn = document.createElement("a");
-        // addPhoneBtn.setAttribute("href",String(phone));
-        // addPhoneBtn.appendChild(document.createTextNode("Phone"));
-        // addPhoneBtn.setAttribute("todo", "addPhone");
-        // divNewCard.appendChild(addPhoneBtn);
+        const breakLine13 = document.createElement("br");
+        divNewCard.appendChild(breakLine13);
 
-        // const addMapBtn = document.createElement("button");
+        if ((String(Google_Maps_link).length)>5)
+        {
+       
         const addMapBtn = document.createElement("a");
         // addMapBtn.setAttribute("href", "https://www.google.ca/maps/place/Calgary,+AB/@51.0272883,-114.3680132,10z/data=!3m1!4b1!4m5!3m4!1s0x537170039f843fd5:0x266d3bb1b652b63a!8m2!3d51.0447331!4d-114.0718831")
         addMapBtn.setAttribute("href", String(Google_Maps_link))
@@ -157,6 +166,13 @@ const functions = {
         addMapBtn.appendChild(document.createTextNode("Google Map"));
         addMapBtn.setAttribute("todo", "addMap");
         divNewCard.appendChild(addMapBtn);
+    }
+    else {
+        const subtitle6 = document.createTextNode("h5");
+        subtitle6.textContent = "No address defined for security reason."
+        divNewCard.appendChild(subtitle6);
+    }
+
 
         // divNewCard.classList.add("card-body");
 
@@ -183,32 +199,5 @@ const functions = {
     // }
 }
 
-  //Card Logic - Connects card to event listener
-
-  // addCardBefore: (el) => {
-  //   const card = el.parentElement;
-  //   const group = card.parentElement;
-  //   const div = functions.buildNewCard();
-  //   group.insertBefore(div, card);
-  // },
-
-  // addCardAfter: (el) => {
-  //   const card = el.parentElement;
-  //   const group = card.parentElement;
-  //   const div = functions.buildNewCard();
-  //   group.insertBefore(div, card.nextSibling);
-
-  // },
-
-  // deleteCard: (el) => {
-  //   const card = el.parentElement;
-  //   const group = card.parentElement;
-  //   group.removeChild (card); 
-
-  // },
-
-
-
-
-
+  
 export default { criterias, functions };
