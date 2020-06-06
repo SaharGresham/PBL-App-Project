@@ -53,14 +53,21 @@ class ResourceHandlers {
     }
     filterbyCriterias(terms) {
         let finalAns;
-        if (terms[0]==="Y")
+        if ((terms[0]==="Y") &&((terms[1] !="All")))
         {
             finalAns=this.majorRS.filter(temp1 => ((temp1.Women_only === terms[0]) && (temp1.Category.includes(String(terms[1])))))
 
-        }else if (terms[0]==="AA")
+        }else if((terms[0]==="Y") &&((terms[1] ="All")))
+        {finalAns=this.majorRS.filter(temp1 => (temp1.Women_only === terms[0]))}
+
+        else if ((terms[0]==="AA") && ((terms[1] !="All")))
         {
             finalAns=this.majorRS.filter(temp1 => (temp1.Category.includes(String(terms[1]))))
-        }else
+        }else if ((terms[0]==="AA") &&(terms[1]==="All"))
+        {finalAns = this.majorRS}
+         else if ((!(terms[0]==="AA")) &&(terms[1]==="All"))
+        {finalAns = this.majorRS.filter(temp1 => ((temp1.Sector === terms[0])))}
+        else
         { finalAns = this.majorRS.filter(temp1 => ((temp1.Sector === terms[0]) && (temp1.Category.includes(String(terms[1])))))}
         if (finalAns.length === 0) {
         //     finalAns = this.filterbySector(terms[0]);

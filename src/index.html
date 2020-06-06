@@ -14,7 +14,7 @@
 <body>
     <div class="testbox">
         <form action="/">
-            <div>
+            <div >
                 <div class="banner">
 
                     <h1>Calgary Helps is here for you</h1>
@@ -24,16 +24,17 @@
                     information below to see the resources available in Calgary.</p>
                 <br />
             </div>
-            <div >
+            <div class= "colums">
                 <div class="btn-block">
                     <input type="button" id="women" todo="women-only" value="Women Only Resources"></button><br><br>
                 </div>
                 <div class="item">
+                    
+                    <p id="p1" style="text-align:center">Calgary Areas </p> 
+                        <!-- <label for ="select1">Calgary Areas :</label> -->
+                        <select id="select1" name="dropdown1">
 
-                    <p id="p1" style="text-align:center">Calgary Areas </p><br>
-
-                    <select id="select1" name="dropdown1">
-                        <option selected value="" disabled selected></option>
+                        <!-- <option selected value="" disabled selected></option> -->
                         <!-- <option value="Y">Women Only</option> -->
                         <option value="NW">North West</option>
                         <option value="NE">North East</option>
@@ -45,8 +46,8 @@
                     </select>
                 </div>
 
-                
-            </div>
+
+            
 
 
             <div class="question" id="cont1">
@@ -63,26 +64,26 @@
                     </div>
                     <div>
                         <input type="radio" value="none" id="Mental" name="Activity" />
-                        <label for="Mental" class="radio"><span>Mental Health</span></label>
+                        <label for="Mental" class="radio"><span>Mental_Health</span></label>
                     </div>
                     <div>
                         <input type="radio" value="none" id="Substance" name="Activity" />
-                        <label for="Substance" class="radio"><span>Substance Issues</span></label>
+                        <label for="Substance" class="radio"><span>Substance_Issues</span></label>
                     </div>
                     <div>
                         <input type="radio" value="none" id="Counselling" name="Activity" />
                         <label for="Counselling" class="radio"><span>Counselling</span></label>
                     </div>
-                    <!-- <div>
-                        <input type="radio" value="none" id="Women" name="Activity" />
-                        <label for="Women" class="radio"><span>Women Only</span></label>
-                    </div> -->
+                    <div>
+                        <input type="radio" value="none" id="All" name="Activity" />
+                        <label for="All" class="radio"><span>All</span></label>
+                    </div>
 
                 </div>
             </div>
-    </div>
+        </div>
 
-    
+
     <!-- <div class="item">
         <p>Here are results for:
             <input type="text"  id="idcurrentCity" disabled>
@@ -90,16 +91,16 @@
             
             <button todo="delete">Delete City</button>
         </div>  -->
-        
-        <!-- <div class="card w-75"> -->
-            
-            <div id="r-corner" class="w-75 p-3" style="background-color: #eee;text-align:center">
-                <div class="btn-block" id="stick">
-                    <input type="reset" id="reset" todo="delete-cards" value="Reset Search"></button><br><br>
-                </div>
-                
-                
-                <p style="text-align:center">The Calgary Resources are showing up here:</p>
+
+    <!-- <div class="card w-75"> -->
+
+    <div id="r-corner" class="w-75 p-3" style="background-color: #eee;text-align:center">
+        <div class="btn-block" id="stick">
+            <input type="reset" id="reset" todo="delete-cards" value="Reset Search"></button><br><br>
+        </div>
+
+
+        <p style="text-align:center">The Calgary Resources are showing up here:</p><br><br>
         <!-- <button id="reset"> Reset Search</input> -->
         <p id="no-resources1" style="text-align:center">No RESOURCES available based on your criteria. Change the area,
             and you might find what you are looking for in other areas of Calgary</p><br />

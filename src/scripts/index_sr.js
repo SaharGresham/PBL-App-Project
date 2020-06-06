@@ -81,7 +81,7 @@ document.body.addEventListener("click", (e) => {
 //             idAccountStatusMsg.innerText = `The total balance of all acounts is $${AcctControls.totalAcctBalance()}`;
 //             DOMfunctions.deleteAcctCard(event.target.parentElement);
 
-//             let dropDown = event.target.parentElement.id;
+//             let  = event.target.parentElement.id;
 
 //             let counter = 0;
 //             for (let n = 0; n < idDropDown.length; n++) {
